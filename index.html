@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>الأسئلة المتوقعة — مراجعة الميدتيرم (المحاضرات 3–5)</title>
+<style>
+:root{color-scheme:light;--bg:#fff;--card:#fff;--ink:#14202e;--mute:#3d4b5c;--line:#d5dbe3;--acc:#1f5f8b;--acc2:#f1f6fa}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",Arial,sans-serif;font-size:clamp(18px,1.2vw + 14px,22px);line-height:1.9;padding:20px 14px 70px;direction:rtl;text-align:right}
+main{max-width:880px;margin:auto}
+h1{font-size:1.6em;margin:0 0 6px;line-height:1.5}
+.sub{color:var(--mute);margin:0 0 18px;font-size:.9em}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;position:sticky;top:0;background:#fff;padding:10px 0;z-index:2;border-bottom:1px solid var(--line)}
+nav button,.tools button{font:inherit;font-size:.8em;border:1px solid var(--line);background:#fff;color:var(--ink);padding:6px 14px;border-radius:8px;cursor:pointer;min-height:44px}
+nav button[aria-pressed=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.tools{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tools input{flex:1;min-width:160px;font:inherit;font-size:16px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-height:44px}
+h2{font-size:1.2em;margin:30px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--acc);line-height:1.5}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;padding:14px 16px;list-style:none}
+summary::-webkit-details-marker{display:none}
+.n{color:var(--acc);font-weight:700;margin-inline-end:8px;unicode-bidi:isolate}
+.en{direction:ltr;text-align:left;unicode-bidi:isolate;font-weight:600;display:block;font-size:1.05em;line-height:1.6}
+.ar{direction:rtl;text-align:right;unicode-bidi:isolate;display:block;color:var(--mute);margin-top:6px}
+.ans{padding:12px 16px 16px;border-top:1px dashed var(--line);background:var(--acc2);border-radius:0 0 10px 10px}
+.ans .a-en{direction:ltr;text-align:left;unicode-bidi:isolate;margin:0 0 10px;line-height:1.6}
+.ans .a-ar{direction:rtl;text-align:right;unicode-bidi:isolate;margin:0}
+@media (max-width:520px){body{padding:14px 10px 60px}summary{padding:12px}.ans{padding:10px 12px 14px}}
+</style>
+</head>
+<body>
+<main>
+<h1>الأسئلة المتوقعة — الميدتيرم</h1>
+<p class="sub">المحاضرات 3 و4 و5 · الأسئلة المتوقعة + صح/خطأ · السؤال بالإنجليزي مع ترجمته بالعربي · اضغط على السؤال لإظهار الإجابة</p>
+<nav id="nav" aria-label="المحاضرات"></nav>
+<div class="tools">
+<input id="q" type="search" placeholder="بحث…" aria-label="بحث">
+<button id="open">فتح الكل</button><button id="close">إغلاق الكل</button>
+</div>
+<div id="out"></div>
+</main>
+<script>
+const D=[
+{t:"المحاضرة 3: عملية التحقيق (Investigatory Process)",q:[
+["Who is the first responder and what is his job?","من هو المستجيب الأول وما مهمته؟","الشخص الذي ترسله جهة التحقيق لإجراء التحقيق الأولي وتحديد السبب الجذري؛ ويجب أن يفهم كيفية جمع الدليل بطريقة سليمة جنائيًا."],
+["Explain consent to search and when it applies.","اشرح الموافقة على التفتيش ومتى تُطبّق.","يسمح المالك بالتفتيش والجمع دون أمر؛ غالبًا عندما لا يكون المالك المشتبه أو عندما وقّع الموظف نموذج تفتيش كشرط للتوظيف."],
+["What is a subpoena and what is its drawback?","ما هو أمر الإحضار (Subpoena) وما عيبه؟","أمر محكمة يُطلب عندما لا يسمح المالك بالتفتيش؛ عيبه أن المشتبه قد يملك وقتًا لإتلاف الأدلة."],
+["Why do banks demand a court order?","لماذا تطلب البنوك أمرًا قضائيًا؟","لأن سياساتهم الداخلية وأنظمتهم تمنع تسليم المعلومات دونه — وليس رفضًا للتعاون."],
+["When is a search warrant used and who can request it?","متى يُستخدم أمر التفتيش ومن يستطيع طلبه؟","عندما قد يؤدي إخبار المشتبه إلى إتلاف الأدلة؛ يُنفذ دون إشعار؛ ومتاح لجهات إنفاذ القانون فقط."],
+["What do courts require to issue a search warrant?","ماذا تشترط المحاكم لإصدار أمر التفتيش؟","مؤشرات معقولة تربط شخصًا وأجهزة محددة بنشاط إجرامي."],
+["Name the two types of search warrants.","اذكر نوعي أوامر التفتيش.","أمر أجهزة التخزين الإلكترونية؛ وأمر مزود الخدمة (ISP، السحابة، التجار الإلكترونيون)."],
+["List five items in a first responder's bag.","اذكر خمسة عناصر في حقيبة المستجيب الأول.","شريط المسرح، ملصقات، قفازات، كاميرا، نماذج سلسلة الحيازة، أكياس مضادة للساكنة، مواد عازلة للراديو، أدوات التقاط RAM/الهارد، لابتوب جنائي."],
+["Why is RF-shielding material needed?","لماذا نحتاج مواد عازلة لموجات الراديو؟","لمنع الجوالات/التابلت المضبوطة بشرائح SIM من استقبال المكالمات والرسائل."],
+["What to do if you suspect the computer is wiping evidence?","ماذا تفعل إذا اشتبهت أن الجهاز يمسح الأدلة؟","أطفئه فورًا: اسحب الكابل، وانزع البطارية إن أمكن، أو اضغط مطولًا على زر التشغيل إذا كانت ثابتة."],
+["What should be done if the computer is OFF? Why photograph the screen?","ماذا تفعل إذا كان الجهاز مطفأ؟ ولماذا نصوّر الشاشة؟","لا تشغّله. وتصوير الشاشة لتوثيق البرامج العاملة والملفات المفتوحة والتاريخ/الوقت."],
+["What network information should be acquired before shutdown?","ما معلومات الشبكة التي تُجمع قبل الإطفاء؟","عنوان IP، الجلسات، المنافذ المفتوحة، جدول التوجيه، عناوين LAN، عنوان البث، رقم بطاقة الشبكة."],
+["Compare hard and graceful shutdown.","قارن بين الإطفاء القسري والاعتيادي.","القسري: يحفظ الملفات والطوابع ويمنع برامج المسح لكنه يفقد البيانات غير المحفوظة وقد يفسد الملفات. الاعتيادي: يكشف الملفات المفتوحة ويمنع التلف ويسمح بكتابة الآثار لكنه قد يشغل برامج/سكربتات تدميرية ويكتب فوق البيانات."],
+["What is the order of volatility?","ما هو ترتيب التطاير؟","تسلسل جمع الأدلة من الأكثر إلى الأقل تطايرًا: المعالج/الكاش ← جداول التوجيه وARP والعمليات ← RAM ← الملفات المؤقتة ← pagefile ← الهارد ← السجلات البعيدة ← التهيئة والطوبولوجيا ← النسخ الاحتياطية والمطبوعات."],
+["What is the pagefile?","ما هو ملف pagefile؟","مساحة التبديل/الذاكرة الافتراضية في ويندوز: ملف على الهارد يوسّع الـ RAM المتاح."],
+["Why document the crime scene?","لماذا نوثّق مسرح الجريمة؟","لتجنب ترك الأدلة، وللمساعدة في إعداد التقرير، ولتذكر المشهد عند الشهادة."],
+["When should the scene be photographed?","متى يجب تصوير المسرح؟","مرتين: عند الدخول وقبل المغادرة بعد ضبط الأجهزة."],
+["How should a device be packaged for transport?","كيف يُغلَّف الجهاز للنقل؟","شريط على زر التشغيل، كيس مضاد للساكنة، تسجيل اسمك والتاريخ/الوقت، وإضافة ملاحظات."]
+]},
+{t:"المحاضرة 4: جمع الأدلة وحفظها + مكافحة التحليل الجنائي",q:[
+["What are the common forensic image formats?","ما هي صيغ الصور الجنائية الشائعة؟","Raw، وAFF، وExpert Witness (EnCase)، وصيغ أخرى أقل شيوعًا."],
+["Give advantages and disadvantages of the Raw format.","اذكر مزايا وعيوب صيغة Raw.","المزايا: يتجاهل أخطاء القراءة البسيطة وسريع. العيوب: لا ميتاداتا داخلية؛ بنفس حجم المصدر (بلا ضغط)."],
+["List features of AFF.","اذكر ميزات صيغة AFF.","مفتوح المصدر، قابل للتوسع، ضغط zlib/LZMA، قابل للتقسيم، يدعم التشفير وكلمة المرور."],
+["What is the EnCase image format and its extension?","ما هي صيغة EnCase وما امتدادها؟","ينشئه EnCase؛ قابل للضغط والبحث والتقسيم؛ ميتاداتا أقل من AFF؛ الامتداد E01. وE02…"],
+["Why and how are acquired images validated?","لماذا وكيف يتم التحقق من الصور المجمّعة؟","لإثبات أن الصورة مطابقة 100% للأصل ولم تتغير؛ عبر الهاش (MD5, SHA-256) وهو بصمة إلكترونية."],
+["When is hashing used in an investigation?","متى يُستخدم الهاش في التحقيق؟","مرتين: قبل التحليل (للتحقق من الصورة/قبل النسخ) وفي النهاية للتحقق من سلامة البيانات والمعالجة."],
+["Why is RAM acquisition harder than hard-drive acquisition?","لماذا جمع الـ RAM أصعب من جمع الهارد؟","لأن البيانات تضيع عند الإطفاء وتُستبدل أثناء الاستخدام وغير منظمة؛ وتحتاج أدوات مختلفة."],
+["What is dumping?","ما هو الـ Dumping؟","عملية التقاط البيانات من الذاكرة المتطايرة."],
+["Name types of information found in RAM.","اذكر أنواع المعلومات الموجودة في الـ RAM.","مفاتيح التشفير، العمليات، أوامر الكونسول، الحافظة، معلومات الشبكة، محتوى مفكوك، كلمات المرور، الرسائل، سجلات التصفح، البرمجيات الخبيثة…"],
+["How to handle a locked Windows machine when acquiring RAM?","كيف تتعامل مع ويندوز مقفل عند جمع الـ RAM؟","إطفاء قسري أو تجاوز الدخول دون إعادة تشغيل: أجهزة CaptureGUARD/Phantom Probe، أو هجوم DMA لاستخراج كلمة المرور من الـ RAM."],
+["What is the footprint of RAM capture tools and how do courts view it?","ما أثر أدوات التقاط الـ RAM وكيف تراه المحاكم؟","تغييرات ريجستري، وكتابة فوق مدخلات الذاكرة، وقد تكتب القليل على القرص؛ والمحاكم متسامحة غالبًا إذا وُثّق."],
+["What factors affect the choice of hard-drive acquisition method?","ما العوامل المؤثرة في اختيار طريقة جمع الهارد؟","حجم القرص، الوقت المتاح، إمكانية نقل الوسيط للمختبر أو الجمع بالموقع، وإمكانية إطفاء الجهاز."],
+["Compare physical, logical, and sparse acquisition.","قارن بين الجمع الفيزيائي والمنطقي والمتناثر.","الفيزيائي: نسخة كاملة بت-ببت تشمل المحذوف والمساحة غير المخصصة. المنطقي: بيانات نشطة مختارة فقط. المتناثر: ملفات مختارة مع المحذوف والأجزاء."],
+["Compare disk-to-image and disk-to-disk acquisition.","قارن بين الجمع من القرص إلى ملف ومن القرص إلى قرص.","من القرص إلى ملف: الأكثر استخدامًا ويسمح بنسخ كثيرة. من القرص إلى قرص: نسخ إلى قرص بنفس السعة أو أكبر، قليل الاستخدام (مثل الأقراص القديمة)."],
+["How do you deal with an encrypted hard drive?","كيف تتعامل مع قرص مشفر؟","جمع الذاكرة المتطايرة (المفاتيح)، جمع القرص ثم فك التشفير بالأدوات، وطلب كلمة المرور من المالك."],
+["What are the challenges of cloud and network acquisition?","ما تحديات الجمع من السحابة والشبكة؟","السحابة: قانونية (اختصاصات) وتقنية ولوجستية. الشبكة: حجم بيانات كبير، مهارات تقنية، لا يمكن إيقاف خدمات حرجة، أنظمة الخصوصية."],
+["What are HPA and DCO and why do they matter?","ما هما HPA وDCO ولماذا هما مهمان؟","منطقة محمية للمضيف وطبقة إعدادات الجهاز — مناطق مخفية بالقرص قد تحوي أدلة وبعض الأدوات لا تنسخها."],
+["Define antiforensics and its aim.","عرّف مكافحة التحليل الجنائي (Antiforensics) وهدفها.","تقنيات لمحاربة التحليل الجنائي وإيقاف وتضليل التحقيقات؛ هدفها إتلاف أو إخفاء الأدلة وإطالة وقت التحليل."],
+["Who uses antiforensics?","من يستخدم مكافحة التحليل الجنائي؟","المجرمون والإرهابيون، ولأغراض حسنة: العسكريون والسياسيون والدبلوماسيون والشركات وإنفاذ القانون والباحثون الأمنيون."],
+["List the main classes of antiforensics techniques.","اذكر التصنيفات الرئيسية لتقنيات مكافحة التحليل الجنائي.","إخفاء البيانات، إتلاف البيانات، التشفير، إخفاء الهوية التشفيري، الهجوم المباشر على أدوات التحليل."],
+["Define steganography and explain how it works.","عرّف الستيغانوغرافي واشرح طريقة عمله.","إخفاء رسالة سرية في ملف عادي: حامل + رسالة ← خوارزمية ← ملف مخفي؛ ويستخرجها المستلم بخوارزمية؛ والمظهر لا يتغير."],
+["Name and explain the three steganography embedding techniques.","اذكر واشرح تقنيات التضمين الثلاث في الستيغانوغرافي.","الحقن (بعد EOF)، الاستبدال (بتات غير مهمة؛ الحجم ثابت؛ أكثر أمانًا)، التوليد (ملف جديد؛ الأكثر أمانًا)."],
+["Mention types of steganography by carrier file.","اذكر أنواع الستيغانوغرافي حسب الملف الحامل.","نص، صورة (الأكثر استخدامًا)، صوت/فيديو (MP3Stego)، وشبكة (TCP/IP)."],
+["What is a limitation of image steganography?","ما قيد الإخفاء في الصور؟","تغيير الحجم أو الصيغة أو التعديل أو القص يتلف الرسالة المخفية."],
+["What is watermarking?","ما هي العلامة المائية (Watermarking)؟","نوع من الإخفاء: بيانات سرية مضمنة في صورة/صوت لا يستخرجها إلا المالك بمفتاح سري."],
+["Explain the three data destruction methods.","اشرح طرق إتلاف البيانات الثلاث.","مادي (تدمير الوسائط)، إزالة المغنطة (للمغناطيسية فقط لا SSD/USB)، منطقي (أداة مسح؛ الأكثر شيوعًا؛ لا يضمن 100%)."],
+["Which timestamps can a suspect change on NTFS?","ما الطوابع الزمنية التي يستطيع المشتبه تغييرها في NTFS؟","إنشاء الملف، الوصول، التعديل، وآخر كتابة في MFT."],
+["What are FDE, BitLocker, and EFS?","ما هي FDE وBitLocker وEFS؟","FDE: يشفّر كل بت على القرص. BitLocker: تشفير أقراص ويندوز (منذ Vista) بـ AES. EFS: تشفير NTFS لكل ملف/مجلد."],
+["When is password cracking used?","متى يُستخدم كسر كلمات المرور؟","عند عدم وجود طريقة للحصول على مفتاح فك التشفير؛ هو الأمل الأخير لاستخراج بيانات مفيدة."],
+["What is cryptographic anonymity? Give an example.","ما هو إخفاء الهوية التشفيري؟ أعطِ مثالًا.","إخفاء الأثر بين المرسل والمستقبل على الشبكات المفتوحة؛ مثل TOR حيث التتبع شبه مستحيل."]
+]},
+{t:"المحاضرة 5: تحليل الأدلة (Analysis of Evidence)",q:[
+["What is the difference between decimal, binary, and hex?","ما الفرق بين العشري والثنائي والسداسي عشر (Hex)؟","العشري: أساس 10 (0–9). الثنائي: أساس 2 (0/1). Hex: أساس 16 (0–9 وA–F) وهو طريقة مختصرة للتعبير عن الثنائي."],
+["Define bit and byte.","عرّف البت والبايت.","البت: 1 أو 0. البايت: 8 بتات ويمثل حرفًا واحدًا."],
+["What are MSB and LSB?","ما هما MSB وLSB؟","MSB: أقصى اليسار الأعلى قيمة. LSB: أقصى اليمين الأقل قيمة."],
+["Convert 110011010 to decimal.","حوّل 110011010 إلى عشري.","256 + 128 + 16 + 8 + 2 = 410."],
+["Convert 19A (hex) to decimal.","حوّل 19A (هيكس) إلى عشري.","(1×256) + (9×16) + (10×1) = 256 + 144 + 10 = 410."],
+["What does 20 mean in hex text? What are 4D and 61?","ماذا يعني 20 في نص الهيكس؟ وماذا يمثل 4D و61؟","20 = مسافة؛ 4D = الحرف الكبير M؛ 61 = الحرف الصغير a."],
+["Compare ASCII and Unicode.","قارن بين ASCII وUnicode.","ASCII: 128 حرفًا (7 بتات) للإنجليزية؛ والممتد 256. Unicode: كل لغات العالم وآلاف الأحرف (UTF-8/16/32 وUCS-2)."],
+["What is file carving and when is it used?","ما هو File Carving ومتى يُستخدم؟","تحديد واستخراج الملفات من بيانات خام/مساحة غير مخصصة دون البرنامج الأصلي؛ لاسترجاع الملفات المحذوفة وأجزائها من أقراص ممسوحة أو تالفة."],
+["Explain the steps of file carving.","اشرح خطوات File Carving.","إيجاد الترويسة (Header) لتحديد الملف؛ ثم إيجاد التذييل (Footer)؛ وإن كان متصلًا يُنسخ ويُلصق. والملفات المجزأة أصعب."],
+["Why is the file extension unreliable for identifying a file?","لماذا لا يُعتمد على امتداد الملف لتحديد نوعه؟","لأنه يسهل تغييره (مثل DOCX إلى JPEG) لإخفاء البيانات أمام الأعين."],
+["What is file signature analysis?","ما هو تحليل توقيع الملف؟","مقارنة ترويسة الملف بامتداده لاكتشاف عدم التطابق؛ والأدوات الجنائية تحدد الملف بالترويسة لا بالامتداد."],
+["What is metadata? Give examples for Word files and images.","ما هي الميتاداتا؟ أعطِ أمثلة لملفات Word والصور.","بيانات تصف بيانات أخرى. Word: المؤلف، المؤسسة، اسم الجهاز، وقت الإنشاء، التعليقات. الصور: وقت الالتقاط، إحداثيات GPS، تفاصيل الكاميرا، طراز الجهاز."],
+["How is metadata useful forensically?","كيف تفيد الميتاداتا جنائيًا؟","تتبع المؤلفين، والبحث في الميتاداتا عن معلومات مهمة، وتحديد الجهاز والمكان والوقت."],
+["How can metadata be viewed/edited in Windows?","كيف تُعرض/تُعدّل الميتاداتا في ويندوز؟","كليك يمين ← Properties (أو Alt + Enter)؛ وأدوات: Exif Pilot, GIMP, PDF Metadata Editor, Mp3tag."],
+["Differentiate volatile and nonvolatile memory with examples.","فرّق بين الذاكرة المتطايرة وغير المتطايرة مع أمثلة.","المتطايرة: تحتاج طاقة وتفقد البيانات عند الإطفاء (RAM). غير المتطايرة: تحتفظ بالبيانات بدون طاقة (هارد، فلاش، ROM)."],
+["Compare primary and secondary storage.","قارن بين التخزين الأولي والثانوي.","الأولي: متطاير، سريع، غالٍ، سعة محدودة (RAM، كاش). الثانوي: غير متطاير، أبطأ، أرخص، أكبر (HDD, SSD)."],
+["What forensic data can be found in RAM?","ما البيانات الجنائية التي توجد في الـ RAM؟","برامج تنفيذية، جلسات شبكة، سجل تصفح، محادثات، كلمات مرور، صور، ملفات مفكوكة، المستخدمون المسجلون."],
+["Differentiate DRAM and SRAM.","فرّق بين DRAM وSRAM.","DRAM: الذاكرة الرئيسية وتحتاج تحديثًا مستمرًا. SRAM: كاش المعالج وأسرع ولا تحتاج تحديثًا مستمرًا."],
+["What is ROM and what does it store?","ما هي ROM وماذا تخزّن؟","ذاكرة للقراءة فقط وغير متطايرة تخزن البرامج الثابتة (Firmware) مثل تعليمات اللوحة الأم وكرت الشاشة."],
+["Describe the physical structure of an HDD.","صِف البنية الفيزيائية للـ HDD.","أقراص (Platters) بطلاء مغناطيسي ← مسارات (Tracks) ← قطاعات (Sectors)؛ القطاع عادة 512 بايت (وحتى 4KB في الأحدث)."],
+["What is an SSD?","ما هو الـ SSD؟","تخزين حديث بلا أجزاء متحركة يحفظ البيانات في شرائح NAND فلاش؛ سعته أقل من HDD."],
+["Why is recovering deleted data from an SSD harder than from an HDD?","لماذا استرجاع المحذوف من SSD أصعب من HDD؟","الـ HDD يحذف مؤشر الملف فقط وتبقى البيانات حتى الكتابة فوقها؛ بينما SSD يستخدم TRIM لحذف البيانات فورًا (والتوقيت يعتمد على النظام)."]
+
+]},
+...(()=>{const T='صح ✓',f=n=>'خطأ ✗ — '+n;return[
+{t:"المحاضرة 3: صح / خطأ (True / False)",q:[
+["A first responder conducts the initial investigation to find the root cause.","المستجيب الأول يجري التحقيق الأولي لمعرفة السبب الجذري.",T],
+["Consent to search requires a court warrant.","الموافقة على التفتيش تتطلب أمرًا قضائيًا.",f("تتم دون أمر قضائي بتعاون المالك.")],
+["An employee may have signed a search-and-seizure form as a condition of employment.","قد يكون الموظف وقّع نموذج تفتيش ومصادرة كشرط للتوظيف.",T],
+["A subpoena guarantees the suspect cannot destroy evidence.","الـ Subpoena يضمن عدم قدرة المشتبه على إتلاف الأدلة.",f("قد يملك المشتبه وقتًا لإتلافها.")],
+["A search warrant is executed without prior notice to the suspect.","أمر التفتيش يُنفذ دون إشعار مسبق للمشتبه.",T],
+["Independent forensic investigators can request search warrants.","المحققون المستقلون يستطيعون طلب أوامر تفتيش.",f("فقط جهات إنفاذ القانون.")],
+["Courts grant search warrants easily.","المحاكم تمنح أوامر التفتيش بسهولة.",f("تتطلب مؤشرات معقولة.")],
+["A service provider search warrant is used when the crime was committed via the Internet.","أمر مزود الخدمة يُستخدم عندما ترتكب الجريمة عبر الإنترنت.",T],
+["RF-shielding material lets seized phones keep receiving messages.","المواد العازلة تسمح للجوالات بمواصلة استقبال الرسائل.",f("يمنعها من استقبال المكالمات والرسائل.")],
+["If the computer is OFF, the first responder should turn it ON to inspect it.","إذا كان الجهاز مطفأ يشغّله المستجيب للفحص.",f("لا يُشغَّل.")],
+["If wiping software is suspected, shut the computer down immediately.","عند الاشتباه ببرنامج مسح يُطفأ الجهاز فورًا.",T],
+["Capturing RAM should happen before powering off the machine.","يجب التقاط الـ RAM قبل إطفاء الجهاز.",T],
+["Network info (IP, open ports, routing table) should be acquired before shutdown if attached to a network device.","تُؤخذ معلومات الشبكة قبل الإطفاء إذا كان الجهاز متصلًا بجهاز شبكة.",T],
+["For a laptop with a removable battery, remove the battery first, then unplug.","في اللابتوب بطارية قابلة للإزالة تُنزع أولًا ثم يُفصل الكابل.",T],
+["A hard shutdown may lose unsaved open files.","الإطفاء القسري قد يفقد الملفات المفتوحة غير المحفوظة.",T],
+["A graceful shutdown cannot trigger destructive programs.","الإطفاء الاعتيادي لا يمكن أن يشغل برامج تدميرية.",f("قد يشغل برامج/سكربتات تدميرية مضبوطة عند الإطفاء.")],
+["A hard shutdown prevents changes to file timestamps.","الإطفاء القسري يمنع تغيير الطوابع الزمنية.",T],
+["It is fine to move a computer while it is ON.","لا مشكلة في نقل الحاسوب وهو يعمل.",f("لا تنقله وهو يعمل فقد يفسد الدليل.")],
+["Use gloves to avoid destroying fingerprints.","استخدم القفازات لتجنب إتلاف البصمات.",T],
+["In the order of volatility, the hard drive is more volatile than RAM.","الهارد أكثر تطايرًا من الـ RAM.",f("الـ RAM أكثر تطايرًا من الهارد.")],
+["CPU registers and cache are the most volatile data.","مسجلات المعالج والكاش أكثر البيانات تطايرًا.",T],
+["Backup data and printouts are the least volatile in the list.","النسخ الاحتياطية والمطبوعات الأقل تطايرًا في القائمة.",T],
+["The crime scene should be photographed only once, at entry.","يُصوَّر المسرح مرة واحدة فقط عند الدخول.",f("مرتين: عند الدخول وقبل المغادرة.")],
+["Crime-scene documentation should include a sketch with device type and model numbers.","يجب أن يتضمن التوثيق رسمًا تخطيطيًا بنوع الأجهزة وأرقام موديلاتها.",T],
+["If the law prohibits seizing a device, this should be mentioned in the documentation.","إذا منع القانون ضبط جهاز يجب ذكر ذلك في التوثيق.",T],
+["Tape over the power switch is used during transport to avoid accidental power-on.","الشريط على زر التشغيل يمنع التشغيل بالخطأ أثناء النقل.",T]
+]},
+{t:"المحاضرة 4: صح / خطأ (True / False)",q:[
+["A forensic image can be in Raw, AFF, or Expert Witness format.","يمكن أن تكون الصورة الجنائية بصيغة Raw أو AFF أو Expert Witness.",T],
+["The Raw format stores rich metadata inside the image.","صيغة Raw تخزن ميتاداتا غنية داخل الصورة.",f("Raw لا يخزن ميتاداتا داخله.")],
+["Raw images can be compressed to save space.","يمكن ضغط صور Raw لتوفير المساحة.",f("تحتاج نفس مساحة المصدر.")],
+["AFF supports zlib and LZMA compression.","AFF يدعم ضغط zlib وLZMA.",T],
+["EnCase images use the .E01 extension.","صور EnCase تستخدم الامتداد E01.",T],
+["Validation ensures the acquired image is 100% identical to the source.","التحقق يضمن أن الصورة مطابقة 100% للأصل.",T],
+["MD5 and SHA-256 are cryptographic hash algorithms.","MD5 وSHA-256 خوارزميات هاش تشفيرية.",T],
+["Hashing is used only once, at the end of the investigation.","يُستخدم الهاش مرة واحدة فقط في نهاية التحقيق.",f("مرتين: قبل التحليل وفي النهاية.")],
+["Volatile data is lost when the device is turned off or rebooted.","البيانات المتطايرة تضيع عند الإطفاء أو إعادة التشغيل.",T],
+["Routers and switches can also hold volatile data.","الراوترات والسويتشات قد تحوي بيانات متطايرة.",T],
+["RAM can contain cryptographic keys and decrypted contents.","الـ RAM قد تحوي مفاتيح تشفير ومحتويات مفكوكة.",T],
+["RAM capture tools leave no footprint on the target system.","أدوات التقاط الـ RAM لا تترك أي أثر.",f("يغيّرون الريجستري والذاكرة وقد يكتبون على القرص؛ يجب التوثيق.")],
+["A DMA attack can extract a password from RAM.","هجوم DMA يمكنه استخراج كلمة مرور من الـ RAM.",T],
+["Most RAM-capture software needs administrative privileges.","أغلب برامج التقاط الـ RAM تحتاج صلاحيات إدارية.",T],
+["A physical (bit-stream) acquisition captures deleted files and unallocated space.","الجمع الفيزيائي يلتقط الملفات المحذوفة والمساحة غير المخصصة.",T],
+["Logical acquisition captures unallocated space and deleted files.","الجمع المنطقي يلتقط المساحة غير المخصصة والملفات المحذوفة.",f("يلتقط البيانات النشطة المختارة فقط.")],
+["Sparse acquisition also captures deleted data and fragments.","الجمع المتناثر يلتقط أيضًا المحذوف والأجزاء.",T],
+["Disk-to-image is the most used physical acquisition method.","من القرص إلى ملف صورة هو الأكثر استخدامًا.",T],
+["A physically damaged drive can be acquired directly without repair.","يمكن جمع قرص تالف فيزيائيًا دون إصلاح.",f("يجب أن يصلحه فني عتاد أولًا.")],
+["Cloud acquisition faces multiple-jurisdiction legal challenges.","الجمع من السحابة يواجه تحديات الاختصاصات القضائية المتعددة.",T],
+["All acquisition tools can copy HPA and DCO areas.","كل أدوات الجمع تستطيع نسخ HPA وDCO.",f("بعض الأدوات لا تستطيع.")],
+["Antiforensics aims to destroy or conceal digital evidence.","هدف مكافحة التحليل الجنائي إتلاف أو إخفاء الأدلة.",T],
+["Antiforensics is used only by criminals.","مكافحة التحليل الجنائي يستخدمها المجرمون فقط.",f("يُستخدم أيضًا لأغراض حسنة: العسكريون، الشركات، إنفاذ القانون، الباحثون.")],
+["Steganography conceals a secret message inside an ordinary file.","الستيغانوغرافي يخفي رسالة سرية في ملف عادي.",T],
+["Injection hides a message after the EOF marker.","الحقن يخفي الرسالة بعد علامة EOF.",T],
+["Substitution increases the carrier file size.","الاستبدال يزيد حجم الملف الحامل.",f("يستبدل بتات فلا يزيد الحجم.")],
+["Generation is the most secure steganography technique.","التوليد أكثر تقنيات الإخفاء أمانًا.",T],
+["Image steganography is the most used type.","الإخفاء في الصور هو الأكثر استخدامًا.",T],
+["Resizing or cropping a stego-image preserves the hidden message.","تغيير حجم أو قص الصورة المخفية يحافظ على الرسالة.",f("يتلفها.")],
+["MP3Stego is a popular audio steganography tool.","MP3Stego أداة شهيرة للإخفاء الصوتي.",T],
+["Network steganography exploits protocols like TCP/IP.","الإخفاء الشبكي يستغل بروتوكولات مثل TCP/IP.",T],
+["Degaussing destroys data on SSDs and USB drives.","إزالة المغنطة تتلف بيانات SSD وفلاشات USB.",f("للأجهزة المغناطيسية فقط.")],
+["Logical destruction (wiping) guarantees 100% data removal.","الإتلاف المنطقي يضمن إزالة 100%.",f("لا يضمن 100%.")],
+["A suspect can alter the NTFS timestamps of a file.","يستطيع المشتبه تغيير الطوابع الزمنية لملف NTFS.",T],
+["BitLocker is available beginning with Windows Vista and uses AES.","BitLocker متاح من Vista ويستخدم AES.",T],
+["EFS encrypts the whole disk.","EFS يشفّر القرص بالكامل.",f("EFS يشفّر لكل ملف أو مجلد.")],
+["Tracking users on TOR is almost impossible.","تتبع مستخدمي TOR شبه مستحيل.",T]
+]},
+{t:"المحاضرة 5: صح / خطأ (True / False)",q:[
+["Decimal is a base-10 system using digits 0–9.","العشري نظام أساس 10 يستخدم الأرقام 0–9.",T],
+["A byte consists of 4 bits.","يتكون البايت من 4 بتات.",f("البايت = 8 بتات.")],
+["Each character is represented by a single byte.","كل حرف يُمثَّل ببايت واحد.",T],
+["The MSB is the rightmost bit.","البت MSB هو الأقصى يمينًا.",f("MSB في أقصى اليسار؛ LSB في أقصى اليمين.")],
+["The binary number 110011010 equals 410 in decimal.","الرقم الثنائي 110011010 يساوي 410 عشريًا.",T],
+["Hexadecimal is a base-16 system using 0–9 and A–F.","السداسي عشر أساس 16 يستخدم 0–9 وA–F.",T],
+["In hex, “20” represents a space.","العدد 20 في الهيكس يمثل مسافة.",T],
+["In ASCII, 01000001 represents lowercase “a”.","في ASCII الرقم 01000001 يمثل الحرف الصغير a.",f("يمثل A الكبيرة؛ والصغيرة 01100001.")],
+["ASCII defines 128 characters using 7 bits.","ASCII يعرّف 128 حرفًا باستخدام 7 بتات.",T],
+["Unicode can represent all of the world’s languages.","Unicode يمثل كل لغات العالم.",T],
+["UTF-8 and UTF-16 are Unicode encodings.","UTF-8 وUTF-16 ترميزات Unicode.",T],
+["File carving requires the original program that created the file.","الـ File carving يتطلب البرنامج الأصلي.",f("يتم دون البرنامج الأصلي.")],
+["File carving can recover deleted files and fragments from unallocated space.","يمكن استرجاع الملفات المحذوفة وأجزائها من المساحة غير المخصصة.",T],
+["Fragmented files are easier to carve than continuous files.","الملفات المجزأة أسهل في الـ carving.",f("المجزأة أصعب.")],
+["A file is usually identified for carving by its header.","يُحدد الملف عادة بترويسته عند الـ carving.",T],
+["File extension is a reliable way to identify file type.","امتداد الملف طريقة موثوقة لتحديد النوع.",f("يسهل تغييره.")],
+["Forensic tools identify files by their header, not extension.","الأدوات الجنائية تحدد الملف بترويسته لا بامتداده.",T],
+["Comparing header with extension is called file signature analysis.","مقارنة الترويسة بالامتداد تسمى تحليل توقيع الملف.",T],
+["Metadata is always stored in a separate file.","الميتاداتا تُخزن دائمًا في ملف منفصل.",f("غالبًا داخل الملف نفسه وبعضها منفصل.")],
+["Image metadata can include GPS coordinates and the capturing device model.","ميتاداتا الصور قد تتضمن إحداثيات GPS وطراز الجهاز.",T],
+["Metadata can be edited in Windows through file Properties.","يمكن تعديل الميتاداتا في ويندوز عبر خصائص الملف.",T],
+["Exif Pilot is used for editing PDF metadata.","Exif Pilot يُستخدم لتعديل ميتاداتا PDF.",f("Exif Pilot للصور؛ وPDF Metadata Editor لملفات PDF.")],
+["RAM is volatile memory.","الـ RAM ذاكرة متطايرة.",T],
+["ROM is volatile memory.","الـ ROM ذاكرة متطايرة.",f("ROM غير متطايرة.")],
+["Primary storage is faster but more expensive than secondary storage.","التخزين الأولي أسرع لكنه أغلى من الثانوي.",T],
+["Capturing RAM is mandatory when the investigated computer is running.","التقاط الـ RAM إلزامي عندما يكون الحاسوب يعمل.",T],
+["SRAM must be constantly refreshed like DRAM.","SRAM تحتاج تحديثًا مستمرًا مثل DRAM.",f("DRAM هي التي تحتاج تحديثًا مستمرًا.")],
+["ROM stores firmware.","الـ ROM تخزّن البرامج الثابتة.",T],
+["An HDD sector is commonly 512 bytes.","القطاع في HDD عادة 512 بايت.",T],
+["SSDs have moving platters.","أقراص SSD فيها أقراص متحركة.",f("لا أجزاء متحركة.")],
+["On an HDD, deleting a file removes only its pointer.","في HDD حذف الملف يزيل المؤشر فقط.",T],
+["The TRIM command in SSDs deletes data instantly, making recovery harder.","أمر TRIM في SSD يحذف البيانات فورًا مما يصعّب الاسترجاع.",T]
+]}]})()
+];
+[['م3 أسئلة'],['م4 أسئلة'],['م5 أسئلة'],['م3 صح/خطأ'],['م4 صح/خطأ'],['م5 صح/خطأ']].forEach((a,i)=>D[i].s=a[0]);
+
+const AE=[[
+"The person sent by the investigating entity to conduct the initial investigation and determine the root cause; must understand how to acquire evidence in a forensically sound way.",
+"Owner allows search/acquisition without a warrant; typically when owner isn't the suspect or an employee signed a search-and-seizure form as a job condition.",
+"A court order obtained when the owner doesn't permit the search; drawback: the suspect may have time to destroy evidence.",
+"Their internal policies and regulations forbid handing info to investigators without it — not a refusal to cooperate.",
+"When notifying the subject would likely lead to evidence destruction; executed without prior notice; available only to law enforcement.",
+"Reasonable clues linking a specific person and specific devices to a criminal activity.",
+"Electronic storage device warrant; service provider warrant (ISP, cloud, online merchants).",
+"Crime scene tape, labels, gloves, camera, chain of custody forms, antistatic bags, RF-shielding material, RAM/HDD capture tools, forensic laptop.",
+"To stop seized phones/tablets with SIM cards from receiving calls or messages.",
+"Shut it down immediately: pull the power cord, remove removable battery first, or hold the power button if the battery is fixed.",
+"Do not turn it ON. Photograph the screen to record running programs, open files/folders, and date/time.",
+"IP address, open sessions, open ports, routing table, LAN addresses, broadcast address, NIC number.",
+"Hard: preserves system files/timestamps and blocks wipe programs, but loses unsaved data and may corrupt files. Graceful: reveals open files, avoids corruption, lets apps write artifacts, but may trigger destructive programs/scripts and overwrite data.",
+"The sequence for collecting evidence from most to least volatile: CPU/cache → routing/ARP/process tables → RAM → temp files → swap/pagefile → hard drive → remote logs → physical config/topology → backups/printouts.",
+"Swap space/virtual memory in Windows: a file on the hard drive that extends the RAM available to the computer.",
+"To avoid leaving evidence behind, to help prepare the report, and to remember the scene when testifying.",
+"Twice: on entering and before leaving after seizing the devices.",
+"Tape over the power switch, antistatic bag, label with your name and date/time, add notes."
+],[
+"Raw, AFF (Advanced Forensic Format), Expert Witness (EnCase), plus less popular ones.",
+"Advantages: ignores minor read errors, fast transfer. Disadvantages: no internal metadata; same size as source (no compression).",
+"Open source, extensible, zlib/LZMA compression, splittable, supports encryption and password protection.",
+"Created by EnCase Forensic; compressible, searchable, splittable; limited metadata vs AFF; extension .E01, .E02…",
+"To prove the image is 100% identical to the source and unaltered; by hashing (MD5, SHA-256) — the hash is an electronic fingerprint.",
+"Twice: before analysis (to verify the image / before making copies) and at the end to verify integrity of data and processing.",
+"Data is lost on power-off/reboot, overwritten during use, and not stored in a structured way; needs different tools.",
+"The process of capturing data from volatile memory.",
+"Crypto keys, running processes, console commands, clipboard, network info, decrypted content, passwords, IMs, browsing logs, malware (rootkits/trojans), etc.",
+"Hard shutdown or bypass login without reboot: CaptureGUARD/Phantom Probe hardware, or DMA attack to extract the password from RAM.",
+"Registry changes, overwritten memory entries, possibly small disk writes; courts are usually forgiving if documented.",
+"Drive size, available time, whether media can go to the lab or must be acquired on site, and whether the machine can be shut down.",
+"Physical: full bit-by-bit copy incl. deleted files/unallocated space. Logical: only selected active data. Sparse: selected case files plus deleted data and fragments.",
+"Disk-to-image: stored in an image file, most used, many copies. Disk-to-disk: copy to a new drive of equal/greater capacity, rarely used (e.g., old HDDs).",
+"Acquire volatile memory (keys), acquire the drive then decrypt with tools, and ask the owner for the password.",
+"Cloud: legal (jurisdictions), technical, logistical. Network: large data volume, technical skills, can't stop critical services, privacy regulations.",
+"Host Protected Area and Device Configuration Overlay — hidden drive areas that may hold incriminating data; some tools cannot copy them.",
+"Techniques used to fight forensic analysis, stop and mislead investigations; aim to destroy or conceal evidence and increase analysis time.",
+"Criminals and terrorists, and for good: military, politicians/diplomats, businesses, law enforcement, security researchers.",
+"Data hiding (steganography), data destruction, encryption, cryptographic anonymity, direct attacks against forensic tools.",
+"Concealing a secret message in an ordinary file: carrier + message → algorithm → stego file; receiver extracts with algorithm; appearance unchanged.",
+"Injection (after EOF), Substitution (replace insignificant bits; size unchanged; more secure), Generation (create new file; most secure).",
+"Text, image (most used), audio-video (MP3Stego), and network steganography (TCP/IP).",
+"Resizing, format change, editing, or cropping destroys the hidden message.",
+"A text-steganography type: secret data embedded in an image/audio file, extractable only by the owner using a secret key.",
+"Physical (destroy media), Degaussing (magnetic media only, not SSD/USB), Logical/sanitizing (wiping tool; most common; not 100% guaranteed).",
+"File created, file accessed, file modified, and MFT last written.",
+"FDE: encrypts every bit on a drive. BitLocker: Windows (since Vista) drive encryption using AES. EFS: NTFS per-file/folder encryption.",
+"When there is no way to obtain the decryption key; it's the last hope to extract useful data.",
+"Hiding traces between sender and receiver over open networks; e.g., tracking users on TOR is almost impossible."
+],[
+"Decimal: base-10 (0–9). Binary: base-2 (0/1). Hex: base-16 (0–9, A–F), a compact way to express binary.",
+"Bit: a single 1 or 0. Byte: 8 bits; represents one character.",
+"MSB: leftmost, highest-value bit. LSB: rightmost, lowest-value bit.",
+"256 + 128 + 16 + 8 + 2 = 410.",
+"(1×256) + (9×16) + (10×1) = 256 + 144 + 10 = 410.",
+"20 = space; 4D = uppercase “M”; 61 = lowercase “a”.",
+"ASCII: 128 characters (7 bits), English; Extended ASCII 256. Unicode: all world languages, thousands of characters (UTF-8/16/32, UCS-2).",
+"Locating and extracting files from raw data/unallocated space without the original program; used to recover deleted files/fragments from wiped or damaged drives.",
+"Find the header to identify the file; find the footer; if continuous, copy-paste to extract. Fragmented files are harder.",
+"It can be easily renamed (e.g., DOCX to JPEG) to hide data in plain sight.",
+"Comparing a file’s header with its extension to find mismatches; forensic tools identify files by header, not extension.",
+"Data describing other data. Word: author, organization, computer name, creation time, comments. Image: timestamp, GPS coordinates, camera details, device model.",
+"Track authors, search interesting info within metadata, identify capturing device/location/time.",
+"Right-click the file → Properties (or Alt + Enter); tools: Exif Pilot, GIMP, PDF Metadata Editor, Mp3tag.",
+"Volatile: needs power, loses data when off (RAM). Nonvolatile: keeps data without power (HDD, flash, ROM).",
+"Primary: volatile, fast, expensive, limited capacity (RAM, cache). Secondary: nonvolatile, slower, cheaper, larger (HDD, SSD).",
+"Executable programs, network sessions, browsing history, IM chats, passwords, photos, decrypted files, logged-on users.",
+"DRAM: main memory, needs constant refresh. SRAM: CPU cache, faster, no constant refresh.",
+"Read-only, nonvolatile memory storing firmware (e.g., motherboard, graphics card instructions).",
+"Platters (magnetic-coated disks) → tracks → sectors; sector typically 512 bytes (up to 4 KB in newer systems).",
+"Modern storage with no moving parts that saves data in NAND flash chips; lower capacity than HDD.",
+"HDD deletes only the file pointer, leaving data until overwritten; SSD uses TRIM to delete data instantly (timing depends on OS)."
+]];
+const TN=[{2:"It is done without a warrant, with the owner's cooperation.",4:"The suspect may have time to destroy it.",6:"Only law enforcement officers can.",7:"They require reasonable clues.",9:"It prevents them from receiving calls/messages.",10:"Do not turn it ON.",16:"It may launch destructive programs/scripts set to run at shutdown.",18:"Do not move it while ON; may corrupt evidence.",20:"RAM is more volatile than the hard drive.",23:"Twice: on entry and before leaving."},
+{2:"Raw cannot store metadata within it.",3:"They need the same storage as the source.",8:"Used twice: before analysis and at the end.",12:"They change registry/memory and may write to disk; document it.",16:"It captures only selected active data.",19:"It must be fixed by a hardware technician first.",21:"Some tools cannot.",23:"Also used for good: military, businesses, law enforcement, researchers.",26:"It replaces bits, so size doesn't increase.",29:"It destroys it.",32:"Only magnetic devices.",33:"It cannot guarantee 100%.",36:"EFS encrypts per file or folder."},
+{2:"A byte = 8 bits.",4:"The MSB is the leftmost bit; LSB is rightmost.",8:"It represents uppercase “A”; lowercase “a” is 01100001.",12:"It works without the original program.",14:"Fragmented files are harder.",16:"It is easily changed.",19:"Usually inside the same file; some types use a separate file.",22:"Exif Pilot is for images; PDF Metadata Editor is for PDFs.",24:"ROM is nonvolatile.",27:"DRAM needs constant refresh; SRAM does not.",30:"SSDs have no moving parts."}];
+AE.forEach((a,i)=>a.forEach((t,k)=>D[i].q[k][3]=t));
+TN.forEach((o,j)=>D[j+3].q.forEach((x,k)=>x[3]=x[2].startsWith('صح')?'True':'False — '+o[k+1]));
+const nav=document.getElementById('nav'),out=document.getElementById('out'),q=document.getElementById('q');
+let cur=-1;
+function mk(label,i){const b=document.createElement('button');b.textContent=label;b.onclick=()=>{cur=i;render()};b.dataset.i=i;nav.appendChild(b)}
+mk('الكل',-1);D.forEach((s,i)=>mk(s.s,i));
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function render(){
+[...nav.children].forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===cur));
+const term=q.value.trim().toLowerCase();
+out.innerHTML=D.map((s,i)=>{
+if(cur!==-1&&cur!==i)return'';
+const items=s.q.map((x,k)=>({x,k})).filter(({x})=>!term||(x[0]+x[1]+x[2]).toLowerCase().includes(term));
+if(!items.length)return'';
+return'<h2>'+s.t+'</h2>'+items.map(({x,k})=>'<details><summary><span class="n">'+(k+1)+'.</span><span class="en">'+esc(x[0])+'</span><span class="ar">'+esc(x[1])+'</span></summary><div class="ans"><p class="a-en">'+esc(x[3])+'</p><p class="a-ar">'+esc(x[2])+'</p></div></details>').join('')}).join('')}
+q.oninput=render;
+document.getElementById('open').onclick=()=>out.querySelectorAll('details').forEach(d=>d.open=true);
+document.getElementById('close').onclick=()=>out.querySelectorAll('details').forEach(d=>d.open=false);
+render();
+</script>
+</body>
+</html>
